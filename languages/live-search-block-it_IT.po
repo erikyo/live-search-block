@@ -1,0 +1,76 @@
+# Copyright (C) 2025 live-search-block
+# This file is distributed under the GPLv2 or later license.
+msgid ""
+msgstr ""
+"Project-Id-Version: live-search-block 1.0.0\n"
+"Report-Msgid-Bugs-To: codekraft, johnhooks <erik@codekraft.it>\n"
+"POT-Creation-Date: 2025-05-15T18:10:55.640Z\n"
+"PO-Revision-Date: 2025-05-15 20:28+0200\n"
+"Last-Translator: \n"
+"Language-Team: codekraft, johnhooks <erik@codekraft.it>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
+"X-Domain: live-search-block\n"
+
+#. Name of the plugin
+#: live-search-block.php
+msgid "Indexed Search"
+msgstr "Ricerca indicizzata"
+
+#. Url of the plugin
+#: live-search-block.php
+msgid "https://github.com/wp-blocks/search"
+msgstr "https://github.com/wp-blocks/search"
+
+#. Description of the plugin
+#: live-search-block.php
+msgid "WordPress block search in typescript"
+msgstr "Ricerca a blocchi di WordPress nel dattiloscritto"
+
+#. Author of the plugin
+#: live-search-block.php
+msgid "codekraft, johnhooks"
+msgstr "codekraft, johnhooks"
+
+#: src/search.ts:46 inc/variation.php:17 inc/variation.php:18
+#: inc/variation.php:40 src/components/LiveSearch.tsx:23
+msgid "Search"
+msgstr "Cerca"
+
+#: src/search.ts:66
+msgid "Type to search…"
+msgstr "Digita per cercare…"
+
+# 1: Number of characters, 2: Number of characters
+#: src/search.ts:140 src/search.ts:242 src/search.ts:337
+msgid "Please add %s more characters"
+msgid_plural "Please add %s more character"
+msgstr[0] "Aggiungere %s altri caratteri"
+msgstr[1] "Aggiungere %s caratteri in più"
+
+#: src/search.ts:232
+msgid "Sorry, no results found"
+msgstr "Spiacente, nessun risultato trovato"
+
+#. title
+#: block.json
+msgid "title"
+msgstr "titolo"
+
+#. description
+#: block.json
+msgid "description"
+msgstr "descrizione"
+
+#. keywords
+#: block.json
+msgid "keywords"
+msgstr "parole chiave"
+
+#: inc/variation.php:155
+msgid "Live Search"
+msgstr "Ricerca Live"
