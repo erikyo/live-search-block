@@ -18,7 +18,6 @@ function register_live_search_endpoint() {
 					'validate_callback' => function( $value ) {
 						return is_string( $value );
 					}
-
 				),
 				'length' => array(
 					'required' => false,
@@ -27,7 +26,15 @@ function register_live_search_endpoint() {
 					'validate_callback' => function( $value ) {
 						return is_numeric( $value );
 					}
-				)
+				),
+                'post_type' => array(
+                    'required' => false,
+                    'type'     => 'string',
+                    'default'  => 'product,post',
+                    'validate_callback' => function( $value ) {
+                        return is_string( $value );
+                    }
+                )
 			)
 		)
 	);
@@ -42,7 +49,14 @@ function register_live_search_endpoint() {
  */
 function s_live_search( WP_REST_Request $request ) {
 	$query_string = sanitize_text_field( $request->get_param( 'query' ) );
-	$lenght = intval( $request->get_param( 'count'  ) ) ?? S_RESULTS_COUNT;
+	$result_count = intval( $request->get_param( 'count'  ) ) ?? S_RESULTS_COUNT;
+	$post_type_raw = strval( $request->get_param( 'post_type'  ) ) ?? 'product,post';
+    $post_type_raw = explode(',', $post_type_raw);
+
+    // now filter all the post types that are not in the allowed list
+    $allowed_post_types = array('product', 'post');
+    $post_type = array_intersect($post_type_raw, $allowed_post_types);
+
 
 	// Generate a unique key for the transient based on the search parameters
 	$cache_key = 'custom_search_' . md5( $query_string );
@@ -54,9 +68,9 @@ function s_live_search( WP_REST_Request $request ) {
 
 		// Perform your search logic and fetch data
 		$args  = array(
-			'post_type'      => array( 'product', 'post' ),
+			'post_type'      => $post_type,
 			's'              => $query_string,
-			'posts_per_page' => $lenght,
+			'posts_per_page' => $result_count,
 		);
 		$query = new WP_Query( $args );
 
