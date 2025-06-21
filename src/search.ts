@@ -17,6 +17,27 @@ export function initLiveSearch(searchBlock: Element) {
 	let searchInput = searchBlock?.querySelector(
 		'input.wp-block-search__input'
 	) as HTMLInputElement | null;
+
+  // get the post type to search
+  let postType = 'post,product';
+  if (searchBlock.classList.contains('live-search-products')) {
+    postType = 'product';
+  } else if (searchBlock.classList.contains('live-search-post')) {
+    postType = 'post';
+  }
+
+  // get the result count from the live search block
+  let searchBlockClasses = searchBlock?.classList;
+  // search into the classList of the live search block if there is a class that starts with 'live-search-count-' and use that number as the result count
+  let resultCount = Number(liveSearchBlock?.resultCount || 10);
+  if (searchBlockClasses) {
+    for (let i = 0; i < searchBlockClasses.length; i++) {
+      if (searchBlockClasses[i].startsWith('live-search-count-')) {
+        resultCount = Number(searchBlockClasses[i].replace('live-search-count-', ''));
+      }
+    }
+  }
+
 	const searchButton = searchBlock?.querySelector('.wp-block-search__button');
 	const liveSearchType = searchInput ? 'input' : 'modal';
 
@@ -212,7 +233,8 @@ export function initLiveSearch(searchBlock: Element) {
 		if (searchTerm.length >= SEARCH_MIN_LENGTH) {
 			liveSearch(
 				searchTerm,
-        Number(liveSearchBlock?.resultCount || 10)
+        postType,
+        resultCount
 			).then((resultsHtml) => {
 				hideSpinner(searchResultsWrapper);
 
