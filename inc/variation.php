@@ -20,7 +20,7 @@ function register_search_block_variation() {
 		);
 
 		$input_id            = wp_unique_id( 'wp-block-search__input-' );
-		$classnames          = classnames_for_block_core_search( $attributes );
+		$classnames          = classnames_for_block_core_search( $attributes ) . " live-search-block";
 		$show_label          = ! empty( $attributes['showLabel'] );
 		$use_icon_button     = ! empty( $attributes['buttonUseIcon'] );
 		$show_input          = ! ( ( ! empty( $attributes['buttonPosition'] ) && 'button-only' === $attributes['buttonPosition'] ) );
