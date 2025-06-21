@@ -77,13 +77,14 @@ export const getCookieValue = (name: string) =>
  */
 export async function liveSearch(
 	query: string,
+  post_type?: string,
 	count?: number
 ): Promise<Object | false | void> {
 	// Fetch data from REST API
 	return apiFetch({
 		path: '/vsge/v2/live-search',
 		method: 'POST',
-		data: { query, count },
+		data: { query, post_type, count },
 	})
 		.then((data) => {
 			// Display results in the search results div

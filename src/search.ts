@@ -230,7 +230,7 @@ export function initLiveSearch(searchBlock: Element) {
 		}
 		searchBlock.classList.remove('hide');
 
-		if (searchTerm.length >= SEARCH_MIN_LENGTH) {
+    if (searchTerm.length >= SEARCH_MIN_LENGTH) {
 			liveSearch(
 				searchTerm,
         postType,
