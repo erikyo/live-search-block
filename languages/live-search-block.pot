@@ -9,7 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"POT-Creation-Date: 2025-06-21T08:56:57.051Z\n"
+"POT-Creation-Date: 2025-07-09T22:30:08.817Z\n"
 "PO-Revision-Date: 2025-MO-DA HO:MI+ZONE\n"
 "Last-Translator: codekraft, johnhooks <erik@codekraft.it>\n"
 "Language-Team: codekraft, johnhooks <erik@codekraft.it>\n"
@@ -56,14 +56,14 @@ msgstr ""
 
 # 1: Number of characters, 2: Number of characters
 #: src/search.ts:161
-#: src/search.ts:266
-#: src/search.ts:361
+#: src/search.ts:264
+#: src/search.ts:359
 msgid "Please add %s more characters"
 msgid_plural "Please add %s more character"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/search.ts:256
+#: src/search.ts:254
 msgid "Sorry, no results found"
 msgstr ""
 
