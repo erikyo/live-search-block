@@ -3,7 +3,7 @@
  * Plugin Name: Live Search Block
  * Plugin URI: https://github.com/wp-blocks/live-search-blockl
  * Description: WordPress block search in typescript
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: codekraft, johnhooks
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,6 +32,16 @@ if ( ! defined( 'S_RESULTS_COUNT' ) ) {
  * Load the plugin translations file
  */
 include_once S_PATH . 'inc/i18n.php';
+
+/**
+ * The core search functions
+ */
+include_once S_PATH . 'inc/core.php';
+
+/**
+ * The search filters
+ */
+include_once S_PATH . 'inc/filter.php';
 
 /**
  * The rest api that will handle the search request
